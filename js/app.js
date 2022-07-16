@@ -11,10 +11,8 @@ function Employee(employeeID, fullName, department, level, imgUrl, salary){
     this.level = level;
     this.imgUrl = imgUrl;
     this.salary = salary;
-    allUser.push(this);
-    
+    allUser.push(this);    
 }
-
 
 // method to generating a random number between the minimum and maximum salary for each level
 /*
@@ -23,23 +21,18 @@ Senior	   1500	    2000
 Mid-Senior 1000	    1500
 Junior	   500	    1000
  */
-
 // generating a random number for all levels
 function salarylevel(max,min){
     
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
+// prototype to calculate employee salary
 Employee.prototype.calculateSalary = function(){
     (this.level.toLowerCase() === "senior")? this.salary = salarylevel(1500,2000):
         (this.level.toLowerCase() === "mid-senior")? this.salary = salarylevel(1000,1500):
                this.salary = salarylevel(500,1000);
-
-
 }
-
-
 
 // create an instances, a copies of the object Employee
 let id=10;
@@ -51,10 +44,7 @@ const user5 = new Employee(id++,"Hannen Naser","Marketing","Junior","/images/pic
 const user6 = new Employee(id++,"Mohnad Basel","Development","Mid-Senior","/images/pic.png",0);
 const user7 = new Employee(id++,"Amy Smith","Development","Junior","/images/pic.png",0);
 const user8 = new Employee(id++,"Khalid Jaber","Development","Junior","/images/pic.png",0);
-const user9 = new Employee(id++,"Khalid Jaber","Development","Junior","/images/pic.png",0);
-
-
-
+const user9 = new Employee(id++,"Hadi Jaber","Finance","Junior","/images/pic.png",0);
 
 function invokeCalculateSalary(){
     for(let i=0;i<allUser.length;i++){
@@ -67,18 +57,19 @@ invokeCalculateSalary();
 
 // net salary for the employees
 function netSalary(salary){
-   return ((salary) *12)-(((salary) *12)*7.5)/100;
+   return (salary *12)-((salary *12)*7.5)/100;
 
 }
 
-// building a render function
+// building a render prototype function
 Employee.prototype.render = function(){
-   // console.log(allUser[this])
-}
-user1.render();
 
-Employee.prototype.printUserInfo =function(){
-    console.log(this.fullName);
+
+}
+
+// to print all users info into the tables
+function printUserInfo() {
+    
     let table = document.getElementById("myTable");
     console.log("Hello From printinfo")
     //for loop
@@ -113,7 +104,7 @@ Employee.prototype.printUserInfo =function(){
     }
   
 }
-// to print all users info into the tables
-user1.printUserInfo();
+
+printUserInfo();
 
 

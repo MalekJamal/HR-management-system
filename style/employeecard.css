@@ -8,8 +8,7 @@
 }
 
 #logo-top{
-    width: 100px;
-    
+    width: 100px;  
     overflow: hidden;
     float: left;
   
@@ -22,7 +21,6 @@ nav{
     place-items: center; 
     display:flexbox;
     width: 100%;
-   
     
 }
 
@@ -70,24 +68,14 @@ h1{
     color: white;
     margin: 18px;
 }
-table{
-    width: 100%;
-    
-}
-table,th,td{
-    text-align: center;
-    font-size: 30px;
-    border: 1px solid black;
-}
+
+
 
 .footer{
     padding: 40px 0px;
     background-color: black;
-   
     
 }
-
-
 .footer .social{
     text-align: center;
     padding-bottom: 25px;
